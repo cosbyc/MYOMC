@@ -89,12 +89,12 @@ cmsDriver.py Configuration/GenProduction/python/fragment.py \
     --era Run3_2024 \
     --customise Configuration/DataProcessing/Utils.addMonitoring \
     --beamspot DBrealistic \
-    --step LHE,GEN,SIM \
+    --step GEN,SIM \
     --geometry DB:Extended \
     --conditions 140X_mcRun3_2024_realistic_v26 \
-    --customise_commands process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=${RSEED}\\nprocess.source.numberEventsInLuminosityBlock="cms.untracked.uint32(1000)" \
-    --datatier GEN-SIM,LHE \
-    --eventcontent RAWSIM,LHE \
+    --customise_commands process.RandomNumberGeneratorService.generator.initialSeed=${RSEED}\\nprocess.source.numberEventsInLuminosityBlock="cms.untracked.uint32(1000)" \
+    --datatier GEN-SIM \
+    --eventcontent RAWSIM \
     --python_filename Run3Summer24wmLHE_${NAME}_cfg.py \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \
     --fileout file:Run3Summer24wmLHEGS_$NAME_$JOBINDEX.root \
@@ -107,6 +107,7 @@ if [ ! -f "Run3Summer24wmLHEGS_$NAME_$JOBINDEX.root" ]; then
     echo "Run3Summer24wmLHEGS_$NAME_$JOBINDEX.root not found. Exiting."
     return 1
 fi
+
 
 # DIGIPremix
 cd $TOPDIR
