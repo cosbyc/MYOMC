@@ -9,7 +9,8 @@ TOPDIR=$PWD
 #CAMPAIGNS=( "Run3Summer22wmLHE" "Run3Summer22EEwmLHE" "Run3Summer23wmLHE" "Run3Summer23BPixwmLHE" )
 
 #CAMPAIGNS=( "Run3Summer22wmLHE" "Run3Summer22EEwmLHE" "Run3Summer23wmLHE" "Run3Summer23BPixwmLHE" "Run3Summer24wmLHEGS" )
-CAMPAIGNS=( "Run3Summer24pythiaGen" )
+
+CAMPAIGNS=( "Run3Summer24wmLHEGS" "Run3Summer24pythiaGen" )
 
 #CAMPAIGNS=( "RunIISummer20UL16wmLHE_pfnano" "RunIISummer20UL16APVwmLHE_pfnano" "RunIISummer20UL17wmLHE_pfnano" "RunIISummer20UL18wmLHE_pfnano" "NANOGEN" )
 
