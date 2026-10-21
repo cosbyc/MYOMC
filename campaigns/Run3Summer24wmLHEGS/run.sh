@@ -98,7 +98,6 @@ cmsDriver.py Configuration/GenProduction/python/fragment.py \
     --python_filename Run3Summer24wmLHE_${NAME}_cfg.py \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \
     --fileout file:Run3Summer24wmLHEGS_$NAME_$JOBINDEX.root \
-    --number $NEVENTS \
     --number_out $NEVENTS \
     --no_exec \
     --mc
