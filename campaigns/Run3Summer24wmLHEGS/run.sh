@@ -98,7 +98,7 @@ cmsDriver.py Configuration/GenProduction/python/fragment.py \
     --python_filename Run3Summer24wmLHE_${NAME}_cfg.py \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \
     --fileout file:Run3Summer24wmLHEGS_$NAME_$JOBINDEX.root \
-    --number_out $NEVENTS \
+    --number $NEVENTS \
     --no_exec \
     --mc
 cmsRun "Run3Summer24wmLHE_${NAME}_cfg.py"
@@ -122,8 +122,7 @@ cmsDriver.py  \
     --python_filename "Run3Summer24DRPremix0_${NAME}_cfg.py" \
     --filein "file:Run3Summer24wmLHEGS_$NAME_$JOBINDEX.root" \
     --fileout "file:Run3Summer24DRPremix0_$NAME_$JOBINDEX.root" \
-    --number $NEVENTS \
-    --number_out $NEVENTS \
+    --number -1 \
     --pileup_input "$PILEUP_FILELIST" \
     --no_exec \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \
@@ -147,8 +146,7 @@ cmsDriver.py  \
     --python_filename "Run3Summer24DRPremix_${NAME}_cfg.py" \
     --filein "file:Run3Summer24DRPremix0_$NAME_$JOBINDEX.root" \
     --fileout "file:Run3Summer24RECO_$NAME_$JOBINDEX.root" \
-    --number $NEVENTS  \
-    --number_out $NEVENTS  \
+    --number -1  \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \
     --no_exec \
     --mc
@@ -187,8 +185,7 @@ cmsDriver.py  \
     --filein "file:Run3Summer24RECO_$NAME_$JOBINDEX.root" \
     --fileout "file:Run3Summer24MiniAOD_$NAME_$JOBINDEX.root" \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \
-    --number $NEVENTS \
-    --number_out $NEVENTS \
+    --number -1 \
     --no_exec \
     --mc
 
@@ -211,8 +208,7 @@ cmsDriver.py  \
     --python_filename "Run3Summer24NanoAODv15_${NAME}_cfg.py" \
     --filein "file:Run3Summer24MiniAOD_$NAME_$JOBINDEX.root" \
     --fileout "file:Run3Summer24NanoAODv15_$NAME_$JOBINDEX.root" \
-    --number $NEVENTS \
-    --number_out $NEVENTS \
+    --number -1 \
     --no_exec \
     --nThreads $(( $MAX_NTHREADS < 8 ? $MAX_NTHREADS : 8 )) \ \
     --mc 
